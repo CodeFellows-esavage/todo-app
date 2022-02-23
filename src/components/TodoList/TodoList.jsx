@@ -1,6 +1,7 @@
 import React, {useContext, useState, useEffect} from "react";
 import TodoCard from "../TodoCard/TodoCard";
 import { SettingsContext } from '../../context/settings.js';
+import { Button, ButtonGroup } from "@blueprintjs/core";
 import './TodoList.scss';
 
 
@@ -46,10 +47,12 @@ function TodoList(props){
       {currentTodos.map(item => (
         <TodoCard key={item.id} item={item} toggleComplete={props.toggleComplete}/>
       ))}
-      {pages.map(pageNum => (
-        <span className="pageNum" onClick={handleClick} key={pageNum}>{pageNum}</span>
-      ))}
-      <p>Page Count: {pages.length}</p>
+      <ButtonGroup>
+        {pages.map(pageNum => (
+          <Button className="pageNum" onClick={handleClick} key={pageNum}>{pageNum}</Button>
+        ))}
+      </ButtonGroup>
+      <p>Total Page Count: {pages.length}</p>
     </>
 
   )
