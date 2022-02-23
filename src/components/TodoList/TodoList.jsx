@@ -47,7 +47,7 @@ function TodoList(props){
         <TodoCard key={item.id} item={item} toggleComplete={props.toggleComplete}/>
       ))}
       {pages.map(pageNum => (
-        <span onClick={handleClick} key={pageNum}>{pageNum}</span>
+        <span className="pageNum" onClick={handleClick} key={pageNum}>{pageNum}</span>
       ))}
       <p>Page Count: {pages.length}</p>
     </>
