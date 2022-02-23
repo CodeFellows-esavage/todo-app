@@ -1,13 +1,15 @@
-
-
 import React from 'react';
+import ToDo from './components/Todo/Todo';
+import Settings from './context/settings';
+import '@blueprintjs/core/lib/css/blueprint.css';
 
-import ToDo from './components/todo/Todo';
-
-export default class App extends React.Component {
-  render() {
-    return (
-      <ToDo />
-    );
-  }
+export default function App() {
+  
+  return (
+    <>
+      <Settings>
+        <ToDo />
+      </Settings>
+    </>
+  ) 
 }
