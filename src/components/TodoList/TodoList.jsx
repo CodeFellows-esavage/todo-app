@@ -28,7 +28,7 @@ function TodoList(props){
   console.log('Pages', pages);
     
   let todoList = []
-  if(settings.displayCompleted === false){
+  if(settings.showComplete === false){
     props.list.forEach(todo => {
       if(todo.complete === false) todoList.push(todo);
     })
