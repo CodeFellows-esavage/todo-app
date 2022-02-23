@@ -1,13 +1,11 @@
-
-
 import React from 'react';
+import ToDo from './components/Todo/Todo';
 
-import ToDo from './components/todo/Todo';
-
-export default class App extends React.Component {
-  render() {
-    return (
+export default function App() {
+  
+  return (
+    <>
       <ToDo />
-    );
-  }
+    </>
+  ) 
 }
