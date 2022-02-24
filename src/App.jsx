@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.scss';
 import ToDo from './components/Todo/Todo';
 import Settings from './context/settings';
 import NavBar from './components/NavBar/NavBar'
