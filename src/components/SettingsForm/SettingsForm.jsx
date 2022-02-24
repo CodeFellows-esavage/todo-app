@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import {SettingsContext} from '../../context/settings';
-import {Button} from '@blueprintjs/core';
+import Button from '@mui/material/Button';
 
 function SettingsForm(props){
   const settings = useContext(SettingsContext)

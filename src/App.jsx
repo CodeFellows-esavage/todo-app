@@ -5,8 +5,6 @@ import NavBar from './components/NavBar/NavBar'
 import SettingsForm from './components/SettingsForm/SettingsForm';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import '@blueprintjs/core/lib/css/blueprint.css';
-
 export default function App() {
   
   return (

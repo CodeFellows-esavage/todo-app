@@ -4,11 +4,21 @@ export const SettingsContext = React.createContext();
 
 function SettingsProvider(props) {
 
-  // const [displayCompleted, setDisplayCompleted] = useState(false);
+  const [showComplete, setShowComplete] = useState(false);
+  const [displayMax, setDisplayMax] = useState(2);
+  const [defaultSort, setDefaultSort] = useState('status');
+
+  function toggleShowComplete() {
+    setShowComplete(showComplete === false ? true : false);
+    // setShowComplete();
+  }
+
   const state = {
-    showComplete: false,
-    displayMax: 2,
-    defaultSort: "status",
+    showComplete,
+    displayMax,
+    defaultSort,
+    toggleShowComplete,
+    setDisplayMax
   }
 
 
