@@ -1,7 +1,8 @@
 import React, {useContext, useState, useEffect} from "react";
 import TodoCard from "../TodoCard/TodoCard";
 import { SettingsContext } from '../../context/settings.js';
-import { Button, ButtonGroup } from "@blueprintjs/core";
+import Button from "@mui/material/Button";
+import ButtonGroup from "@mui/material/ButtonGroup";
 import './TodoList.scss';
 
 
@@ -28,7 +29,7 @@ function TodoList(props){
   console.log('Pages', pages);
     
   let todoList = []
-  if(settings.displayCompleted === false){
+  if(settings.showComplete === false){
     props.list.forEach(todo => {
       if(todo.complete === false) todoList.push(todo);
     })

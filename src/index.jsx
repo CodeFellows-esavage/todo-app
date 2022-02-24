@@ -5,7 +5,9 @@ import './reset.scss';
 import App from './App.jsx';
 
 function Main() {
-  return <App />;
+    return(
+      <App />
+    )
 }
 
 const rootElement = document.getElementById('root');
