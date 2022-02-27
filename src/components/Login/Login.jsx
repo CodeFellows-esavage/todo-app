@@ -7,7 +7,7 @@ function Login(props){
   const auth = useContext(AuthContext);
   const [credentials, setCredentials] = useState({})
 
-  handleChange = e => {
+  let handleChange = e => {
     let creds = {
       username: e.target.name,
       password: e.target.value
@@ -15,7 +15,7 @@ function Login(props){
     setCredentials(creds);
   };
 
-  handleSubmit = e => {
+  let handleSubmit = e => {
     e.preventDefault();
     auth.login(credentials.username, credentials.password);
   };
