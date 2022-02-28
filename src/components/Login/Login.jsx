@@ -8,11 +8,7 @@ function Login(props){
   const [credentials, setCredentials] = useState({})
 
   let handleChange = e => {
-    let creds = {
-      username: e.target.name,
-      password: e.target.value
-    }
-    setCredentials(creds);
+    setCredentials(values => ({ ...values, [e.target.name]: e.target.value }));
   };
 
   let handleSubmit = e => {
