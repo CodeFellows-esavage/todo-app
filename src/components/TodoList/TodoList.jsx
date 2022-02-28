@@ -3,6 +3,7 @@ import TodoCard from "../TodoCard/TodoCard";
 import { SettingsContext } from '../../context/settings.js';
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
+
 import './TodoList.scss';
 
 
@@ -46,7 +47,7 @@ function TodoList(props){
   return (
     <>
       {currentTodos.map(item => (
-        <TodoCard key={item.id} item={item} toggleComplete={props.toggleComplete}/>
+        <TodoCard key={item.todoId} item={item} toggleComplete={props.toggleComplete} deleteItem={props.deleteItem}/>
       ))}
       <ButtonGroup>
         {pages.map(pageNum => (
