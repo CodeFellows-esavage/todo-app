@@ -33,17 +33,17 @@ Will outline useful examples here.
 
 ## Roadmap
 
-  - [ ] Phase 1: Application Setup
-  - [ ] Basic To Do List Management, using Hooks
+  - [x] Phase 1: Application Setup
+  - [x] Basic To Do List Management, using Hooks
 - [ ] Phase 2: Persistence
-  - [ ] Implement a custom Form Hook
-  - [ ] Implement a custom Ajax Hook
+  - [x] Implement a custom Form Hook
+  - [x] Implement a custom Ajax Hook
   - [ ] Connect to a live API for storing To Do Items
-- [ ] Phase 3: Settings and Global Context
-  - [ ] Implement user settings for displaying items
-- [ ] Phase 4: Authorization
-  - [ ] Require a login to access the list
-  - [ ] Restrict access to adding, editing, deleting to certain user types
+- [x] Phase 3: Settings and Global Context
+  - [x] Implement user settings for displaying items
+- [x] Phase 4: Authorization
+  - [x] Require a login to access the list
+  - [x] Restrict access to adding, editing, deleting to certain user types
 
 ## License
 Distributed under the MIT License. See LICENSE.txt for more information.

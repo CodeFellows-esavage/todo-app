@@ -47,7 +47,6 @@ function ToDo(props) {
       <Header incomplete={incomplete}/>
       <Form handleChange={handleChange} handleSubmit={handleSubmit}/>
       <TodoList list={list} toggleComplete={toggleComplete}/>
-
     </>
   );
 };
