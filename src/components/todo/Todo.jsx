@@ -11,16 +11,30 @@ function ToDo(props) {
   const [incomplete, setIncomplete] = useState([]);
   const { handleChange, handleSubmit } = useForm(addItem);
 
-  function addItem(item) {
+  async function addItem(item) {
     console.log(item);
-    item.id = nanoid();
+    item.todoId = nanoid();
     item.complete = false;
-    setList([...list, item]);
+    let response = await fetch('https://esavage-auth-api.herokuapp.com/api/v1/todos', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(item),
+    })
+    let newItem = await response.json();
+    setList([...list, newItem]);
   }
 
-  function deleteItem(id) {
+  async function deleteItem(id) {
     const items = list.filter( item => item.id !== id );
     setList(items);
+
+    let response = await fetch(`https://esavage-auth-api.herokuapp.com/api/v1/todos/${id}`, {
+      method: 'DELETE',
+    })
+    response = await response.json();
+    console.log(response);
   }
 
   function toggleComplete(id) {
@@ -35,18 +49,28 @@ function ToDo(props) {
     setList(items);
 
   }
+  async function getList() {
+    let response = await fetch('https://esavage-auth-api.herokuapp.com/api/v1/todos');
+    let data = await response.json();
+    console.log(data);
+    setList(data);
+  }
+
+  useEffect(() => {
+    getList();
+  }, [])
 
   useEffect(() => {
     let incompleteCount = list.filter(item => !item.complete).length;
     setIncomplete(incompleteCount);
-    document.title = `To Do List: ${incomplete}`;
+    document.title = `ToDo's: ${incomplete}`;
   }, [list]);
 
   return (
     <>
       <Header incomplete={incomplete}/>
       <Form handleChange={handleChange} handleSubmit={handleSubmit}/>
-      <TodoList list={list} toggleComplete={toggleComplete}/>
+      <TodoList list={list} toggleComplete={toggleComplete} deleteItem={deleteItem}/>
     </>
   );
 };
